@@ -1,0 +1,30 @@
+#
+#server:  
+#  port: 8091 
+
+spring:
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: kafka:9092
+      bindings:
+        app-downloaded-in:
+          destination: appDownloaded
+          contentType: application/json
+          group: storageGroup
+#        app-downloaded-out:
+#          destination: appDownloaded
+#          contentType: application/json
+
+  datasource:  
+    url : jdbc:mysql://mysql-docker-container:3306/demo?useSSL=false
+    username : demo  
+    password : Demo@1234  
+  jpa:  
+    show-sql : true  
+    hibernate:  
+      ddl-auto : update  
+    properties:  
+      hibernate:  
+        dialect : org.hibernate.dialect.MySQL5Dialect 
