@@ -6,7 +6,7 @@ by Zhigang Pi
 ### Overview
 
 ```
-mvn clean build
+mvn clean package
 
 sudo docker-compose build
 
